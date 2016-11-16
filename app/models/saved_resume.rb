@@ -1,6 +1,10 @@
 class SavedResume < ApplicationRecord
   # Direct associations
 
+  has_many   :sr_purpose_statements,
+             :foreign_key => "resume_id",
+             :dependent => :destroy
+
   has_many   :sr_bullets,
              :foreign_key => "resume_id",
              :dependent => :destroy
