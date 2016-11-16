@@ -19,7 +19,7 @@
 
       <% @organizations.each do |organization| %>
       <tr>
-        <td><%= organization.user_id %></td>
+        <td><%= organization.user.email %></td>
         <td><%= organization.organization %></td>
         <td><%= organization.start_month %></td>
         <td><%= organization.end_month %></td>
