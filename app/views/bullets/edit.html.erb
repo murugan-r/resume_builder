@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @bullet.errors.any? %>
+  <% @bullet.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Bullet #<%= @bullet.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_bullet/<%= @bullet.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for organization_id -->
+      <div class="form-group">
+        <label for="organization_id" class="control-label">
+          Organization
+        </label>
+
+        <input type="text" id="organization_id" name="organization_id" placeholder="Organization" class="form-control" value="<%= @bullet.organization_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Bullet
+      </button>
+      or
+      <a href="/bullets/<%= @bullet.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
