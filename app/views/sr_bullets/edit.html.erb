@@ -24,7 +24,7 @@
           Bullets
         </label>
 
-        <input type="text" id="bullets_id" name="bullets_id" placeholder="Bullets" class="form-control" value="<%= @sr_bullet.bullets_id %>">
+        <%= select_tag(:bullets_id, options_from_collection_for_select(Bullet.all, :id, :organization_id, @sr_bullet.bullets_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for resume_id -->
