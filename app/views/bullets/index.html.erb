@@ -15,7 +15,7 @@
 
       <% @bullets.each do |bullet| %>
       <tr>
-        <td><%= bullet.organization_id %></td>
+        <td><%= bullet.organization.user_id %></td>
         <td>
           <a href="/bullets/<%= bullet.id %>" class="btn btn-primary">Show</a>
           <a href="/bullets/<%= bullet.id %>/edit" class="btn btn-warning">Edit</a>
