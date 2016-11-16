@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Saved Resume #<%= @saved_resume.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @saved_resume.user_id %></dd>
+
+      <dt>Resume name</dt>
+      <dd><%= @saved_resume.resume_name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/saved_resumes" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/saved_resumes/<%= @saved_resume.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_saved_resume/<%= @saved_resume.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

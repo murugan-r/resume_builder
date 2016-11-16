@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Saved_resume resource:
+  # CREATE
+  get "/saved_resumes/new", :controller => "saved_resumes", :action => "new"
+  post "/create_saved_resume", :controller => "saved_resumes", :action => "create"
+
+  # READ
+  get "/saved_resumes", :controller => "saved_resumes", :action => "index"
+  get "/saved_resumes/:id", :controller => "saved_resumes", :action => "show"
+
+  # UPDATE
+  get "/saved_resumes/:id/edit", :controller => "saved_resumes", :action => "edit"
+  post "/update_saved_resume/:id", :controller => "saved_resumes", :action => "update"
+
+  # DELETE
+  get "/delete_saved_resume/:id", :controller => "saved_resumes", :action => "destroy"
+  #------------------------------
+
   # Routes for the Skill resource:
   # CREATE
   get "/skills/new", :controller => "skills", :action => "new"

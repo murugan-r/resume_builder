@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @saved_resume.errors.any? %>
+  <% @saved_resume.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Saved Resume #<%= @saved_resume.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_saved_resume/<%= @saved_resume.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @saved_resume.user_id %>">
+      </div>
+
+      <!-- Label and input for resume_name -->
+      <div class="form-group">
+        <label for="resume_name" class="control-label">
+          Resume name
+        </label>
+
+        <input type="text" id="resume_name" name="resume_name" placeholder="Resume name" class="form-control" value="<%= @saved_resume.resume_name %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Saved Resume
+      </button>
+      or
+      <a href="/saved_resumes/<%= @saved_resume.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
