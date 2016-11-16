@@ -1,6 +1,6 @@
 class SavedResumesController < ApplicationController
   def index
-    @saved_resumes = SavedResume.all
+    @saved_resumes = SavedResume.page(params[:page]).per(10)
 
     render("saved_resumes/index.html.erb")
   end

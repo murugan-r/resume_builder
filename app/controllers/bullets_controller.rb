@@ -1,6 +1,6 @@
 class BulletsController < ApplicationController
   def index
-    @bullets = Bullet.all
+    @bullets = Bullet.page(params[:page]).per(10)
 
     render("bullets/index.html.erb")
   end

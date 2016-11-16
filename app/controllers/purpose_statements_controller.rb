@@ -10,7 +10,7 @@ class PurposeStatementsController < ApplicationController
   end
 
   def index
-    @purpose_statements = PurposeStatement.all
+    @purpose_statements = PurposeStatement.page(params[:page]).per(10)
 
     render("purpose_statements/index.html.erb")
   end

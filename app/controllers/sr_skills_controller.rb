@@ -1,6 +1,6 @@
 class SrSkillsController < ApplicationController
   def index
-    @sr_skills = SrSkill.all
+    @sr_skills = SrSkill.page(params[:page]).per(10)
 
     render("sr_skills/index.html.erb")
   end

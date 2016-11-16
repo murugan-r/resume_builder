@@ -1,6 +1,6 @@
 class SrBulletsController < ApplicationController
   def index
-    @sr_bullets = SrBullet.all
+    @sr_bullets = SrBullet.page(params[:page]).per(10)
 
     render("sr_bullets/index.html.erb")
   end

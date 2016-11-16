@@ -1,6 +1,6 @@
 class SrPurposeStatementsController < ApplicationController
   def index
-    @sr_purpose_statements = SrPurposeStatement.all
+    @sr_purpose_statements = SrPurposeStatement.page(params[:page]).per(10)
 
     render("sr_purpose_statements/index.html.erb")
   end
