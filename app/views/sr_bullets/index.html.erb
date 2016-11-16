@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Sr bullets
+    <a href="/sr_bullets/new" class="btn btn-lg btn-success">New Sr bullet</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Bullets</th>
+        <th>Resume</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @sr_bullets.each do |sr_bullet| %>
+      <tr>
+        <td><%= sr_bullet.bullets_id %></td>
+        <td><%= sr_bullet.resume_id %></td>
+        <td>
+          <a href="/sr_bullets/<%= sr_bullet.id %>" class="btn btn-primary">Show</a>
+          <a href="/sr_bullets/<%= sr_bullet.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_sr_bullet/<%= sr_bullet.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

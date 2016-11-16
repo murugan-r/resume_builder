@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Sr Bullet #<%= @sr_bullet.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Bullets</dt>
+      <dd><%= @sr_bullet.bullets_id %></dd>
+
+      <dt>Resume</dt>
+      <dd><%= @sr_bullet.resume_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/sr_bullets" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/sr_bullets/<%= @sr_bullet.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_sr_bullet/<%= @sr_bullet.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
