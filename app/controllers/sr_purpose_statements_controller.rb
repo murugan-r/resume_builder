@@ -1,6 +1,7 @@
 class SrPurposeStatementsController < ApplicationController
   def index
-    @sr_purpose_statements = SrPurposeStatement.page(params[:page]).per(10)
+    @q = SrPurposeStatement.ransack(params[:q])
+    @sr_purpose_statements = @q.result(:distinct => true).includes(:purpose_statements, :resume).page(params[:page]).per(10)
 
     render("sr_purpose_statements/index.html.erb")
   end

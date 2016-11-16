@@ -1,6 +1,7 @@
 class SavedResumesController < ApplicationController
   def index
-    @saved_resumes = SavedResume.page(params[:page]).per(10)
+    @q = SavedResume.ransack(params[:q])
+    @saved_resumes = @q.result(:distinct => true).includes(:user, :sr_skills, :sr_bullets, :sr_purpose_statements).page(params[:page]).per(10)
 
     render("saved_resumes/index.html.erb")
   end

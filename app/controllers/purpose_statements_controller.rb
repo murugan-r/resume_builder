@@ -10,7 +10,8 @@ class PurposeStatementsController < ApplicationController
   end
 
   def index
-    @purpose_statements = PurposeStatement.page(params[:page]).per(10)
+    @q = PurposeStatement.ransack(params[:q])
+    @purpose_statements = @q.result(:distinct => true).includes(:user, :sr_purpose_statements).page(params[:page]).per(10)
 
     render("purpose_statements/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class BulletsController < ApplicationController
   def index
-    @bullets = Bullet.page(params[:page]).per(10)
+    @q = Bullet.ransack(params[:q])
+    @bullets = @q.result(:distinct => true).includes(:organization, :bullet_tags, :sr_bullets).page(params[:page]).per(10)
 
     render("bullets/index.html.erb")
   end

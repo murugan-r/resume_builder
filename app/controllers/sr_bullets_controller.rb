@@ -1,6 +1,7 @@
 class SrBulletsController < ApplicationController
   def index
-    @sr_bullets = SrBullet.page(params[:page]).per(10)
+    @q = SrBullet.ransack(params[:q])
+    @sr_bullets = @q.result(:distinct => true).includes(:bullets, :resume).page(params[:page]).per(10)
 
     render("sr_bullets/index.html.erb")
   end

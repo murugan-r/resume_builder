@@ -1,6 +1,7 @@
 class SrSkillsController < ApplicationController
   def index
-    @sr_skills = SrSkill.page(params[:page]).per(10)
+    @q = SrSkill.ransack(params[:q])
+    @sr_skills = @q.result(:distinct => true).includes(:skills, :resume).page(params[:page]).per(10)
 
     render("sr_skills/index.html.erb")
   end
