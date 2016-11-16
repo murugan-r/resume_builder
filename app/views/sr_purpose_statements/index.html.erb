@@ -16,7 +16,7 @@
 
       <% @sr_purpose_statements.each do |sr_purpose_statement| %>
       <tr>
-        <td><%= sr_purpose_statement.purpose_statements_id %></td>
+        <td><%= sr_purpose_statement.purpose_statements.user_id %></td>
         <td><%= sr_purpose_statement.resume_id %></td>
         <td>
           <a href="/sr_purpose_statements/<%= sr_purpose_statement.id %>" class="btn btn-primary">Show</a>
