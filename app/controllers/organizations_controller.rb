@@ -6,6 +6,7 @@ class OrganizationsController < ApplicationController
   end
 
   def show
+    @bullet = Bullet.new
     @organization = Organization.find(params[:id])
 
     render("organizations/show.html.erb")

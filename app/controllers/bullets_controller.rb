@@ -6,6 +6,8 @@ class BulletsController < ApplicationController
   end
 
   def show
+    @sr_bullet = SrBullet.new
+    @bullet_tag = BulletTag.new
     @bullet = Bullet.find(params[:id])
 
     render("bullets/show.html.erb")

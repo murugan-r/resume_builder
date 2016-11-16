@@ -53,6 +53,35 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_sr_purpose_statement" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for purpose_statements_id -->
+      <div class="form-group">
+        <label for="purpose_statements_id" class="control-label">
+          Purpose statements
+        </label>
+
+        <%= select_tag(:purpose_statements_id, options_from_collection_for_select(PurposeStatement.all, :id, :user_id), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for resume_id -->
+      <div class="form-group">
+        <label for="resume_id" class="control-label">
+          Resume
+        </label>
+
+        <%= select_tag(:resume_id, options_from_collection_for_select(SavedResume.all, :id, :user_id), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Sr Purpose Statement
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

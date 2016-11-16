@@ -6,6 +6,9 @@ class SavedResumesController < ApplicationController
   end
 
   def show
+    @sr_purpose_statement = SrPurposeStatement.new
+    @sr_bullet = SrBullet.new
+    @sr_skill = SrSkill.new
     @saved_resume = SavedResume.find(params[:id])
 
     render("saved_resumes/show.html.erb")

@@ -16,6 +16,7 @@ class PurposeStatementsController < ApplicationController
   end
 
   def show
+    @sr_purpose_statement = SrPurposeStatement.new
     @purpose_statement = PurposeStatement.find(params[:id])
 
     render("purpose_statements/show.html.erb")
