@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "organizations#index"
   # Routes for the Sr_skill resource:
   # CREATE
   get "/sr_skills/new", :controller => "sr_skills", :action => "new"
