@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Sr purpose statements
+    <a href="/sr_purpose_statements/new" class="btn btn-lg btn-success">New Sr purpose statement</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Purpose statements</th>
+        <th>Resume</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @sr_purpose_statements.each do |sr_purpose_statement| %>
+      <tr>
+        <td><%= sr_purpose_statement.purpose_statements_id %></td>
+        <td><%= sr_purpose_statement.resume_id %></td>
+        <td>
+          <a href="/sr_purpose_statements/<%= sr_purpose_statement.id %>" class="btn btn-primary">Show</a>
+          <a href="/sr_purpose_statements/<%= sr_purpose_statement.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_sr_purpose_statement/<%= sr_purpose_statement.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

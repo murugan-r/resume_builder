@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Sr Purpose Statement #<%= @sr_purpose_statement.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Purpose statements</dt>
+      <dd><%= @sr_purpose_statement.purpose_statements_id %></dd>
+
+      <dt>Resume</dt>
+      <dd><%= @sr_purpose_statement.resume_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/sr_purpose_statements" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/sr_purpose_statements/<%= @sr_purpose_statement.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_sr_purpose_statement/<%= @sr_purpose_statement.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

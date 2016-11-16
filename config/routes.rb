@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Sr_purpose_statement resource:
+  # CREATE
+  get "/sr_purpose_statements/new", :controller => "sr_purpose_statements", :action => "new"
+  post "/create_sr_purpose_statement", :controller => "sr_purpose_statements", :action => "create"
+
+  # READ
+  get "/sr_purpose_statements", :controller => "sr_purpose_statements", :action => "index"
+  get "/sr_purpose_statements/:id", :controller => "sr_purpose_statements", :action => "show"
+
+  # UPDATE
+  get "/sr_purpose_statements/:id/edit", :controller => "sr_purpose_statements", :action => "edit"
+  post "/update_sr_purpose_statement/:id", :controller => "sr_purpose_statements", :action => "update"
+
+  # DELETE
+  get "/delete_sr_purpose_statement/:id", :controller => "sr_purpose_statements", :action => "destroy"
+  #------------------------------
+
   # Routes for the Sr_bullet resource:
   # CREATE
   get "/sr_bullets/new", :controller => "sr_bullets", :action => "new"

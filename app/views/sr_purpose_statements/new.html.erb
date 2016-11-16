@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @sr_purpose_statement.errors.any? %>
+  <% @sr_purpose_statement.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Sr Purpose Statement</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_sr_purpose_statement" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for purpose_statements_id -->
+      <div class="form-group">
+        <label for="purpose_statements_id" class="control-label">
+          Purpose statements
+        </label>
+
+        <input type="text" id="purpose_statements_id" name="purpose_statements_id" placeholder="Purpose statements" class="form-control" value="<%= @sr_purpose_statement.purpose_statements_id %>">
+      </div>
+
+      <!-- Label and input for resume_id -->
+      <div class="form-group">
+        <label for="resume_id" class="control-label">
+          Resume
+        </label>
+
+        <input type="text" id="resume_id" name="resume_id" placeholder="Resume" class="form-control" value="<%= @sr_purpose_statement.resume_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Sr Purpose Statement
+      </button>
+      or
+      <a href="/sr_purpose_statements">Cancel</a>
+    </form>
+  </div>
+</div>
