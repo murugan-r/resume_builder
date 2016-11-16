@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @sr_skill.errors.any? %>
+  <% @sr_skill.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Sr Skill #<%= @sr_skill.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_sr_skill/<%= @sr_skill.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for resume_id -->
+      <div class="form-group">
+        <label for="resume_id" class="control-label">
+          Resume
+        </label>
+
+        <input type="text" id="resume_id" name="resume_id" placeholder="Resume" class="form-control" value="<%= @sr_skill.resume_id %>">
+      </div>
+
+      <!-- Label and input for skills_id -->
+      <div class="form-group">
+        <label for="skills_id" class="control-label">
+          Skills
+        </label>
+
+        <input type="text" id="skills_id" name="skills_id" placeholder="Skills" class="form-control" value="<%= @sr_skill.skills_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Sr Skill
+      </button>
+      or
+      <a href="/sr_skills/<%= @sr_skill.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

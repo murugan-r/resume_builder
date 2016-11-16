@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Sr skills
+    <a href="/sr_skills/new" class="btn btn-lg btn-success">New Sr skill</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Resume</th>
+        <th>Skills</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @sr_skills.each do |sr_skill| %>
+      <tr>
+        <td><%= sr_skill.resume_id %></td>
+        <td><%= sr_skill.skills_id %></td>
+        <td>
+          <a href="/sr_skills/<%= sr_skill.id %>" class="btn btn-primary">Show</a>
+          <a href="/sr_skills/<%= sr_skill.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_sr_skill/<%= sr_skill.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

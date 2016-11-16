@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Sr_skill resource:
+  # CREATE
+  get "/sr_skills/new", :controller => "sr_skills", :action => "new"
+  post "/create_sr_skill", :controller => "sr_skills", :action => "create"
+
+  # READ
+  get "/sr_skills", :controller => "sr_skills", :action => "index"
+  get "/sr_skills/:id", :controller => "sr_skills", :action => "show"
+
+  # UPDATE
+  get "/sr_skills/:id/edit", :controller => "sr_skills", :action => "edit"
+  post "/update_sr_skill/:id", :controller => "sr_skills", :action => "update"
+
+  # DELETE
+  get "/delete_sr_skill/:id", :controller => "sr_skills", :action => "destroy"
+  #------------------------------
+
   # Routes for the Sr_purpose_statement resource:
   # CREATE
   get "/sr_purpose_statements/new", :controller => "sr_purpose_statements", :action => "new"
