@@ -16,7 +16,7 @@
 
       <% @sr_skills.each do |sr_skill| %>
       <tr>
-        <td><%= sr_skill.resume_id %></td>
+        <td><%= sr_skill.resume.user_id %></td>
         <td><%= sr_skill.skills_id %></td>
         <td>
           <a href="/sr_skills/<%= sr_skill.id %>" class="btn btn-primary">Show</a>
