@@ -20,3 +20,127 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many purpose_statements -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Purpose_statements
+      </li>
+
+      <% @user.purpose_statements.each do |purpose_statement| %>
+        <li class="list-group-item">
+          <a href="/purpose_statements/<%= purpose_statement.id %>">
+            <%= purpose_statement.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/purpose_statements/<%= purpose_statement.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/purpose_statements/<%= purpose_statement.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_purpose_statement/<%= purpose_statement.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many skills -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Skills
+      </li>
+
+      <% @user.skills.each do |skill| %>
+        <li class="list-group-item">
+          <a href="/skills/<%= skill.id %>">
+            <%= skill.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/skills/<%= skill.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/skills/<%= skill.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_skill/<%= skill.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many organizations -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Organizations
+      </li>
+
+      <% @user.organizations.each do |organization| %>
+        <li class="list-group-item">
+          <a href="/organizations/<%= organization.id %>">
+            <%= organization.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/organizations/<%= organization.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/organizations/<%= organization.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_organization/<%= organization.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many saved_resumes -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Saved_resumes
+      </li>
+
+      <% @user.saved_resumes.each do |saved_resume| %>
+        <li class="list-group-item">
+          <a href="/saved_resumes/<%= saved_resume.id %>">
+            <%= saved_resume.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/saved_resumes/<%= saved_resume.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/saved_resumes/<%= saved_resume.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_saved_resume/<%= saved_resume.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

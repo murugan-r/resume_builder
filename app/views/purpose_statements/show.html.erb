@@ -23,3 +23,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Purpose statement has many sr_purpose_statements -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Sr_purpose_statements
+      </li>
+
+      <% @purpose_statement.sr_purpose_statements.each do |sr_purpose_statement| %>
+        <li class="list-group-item">
+          <a href="/sr_purpose_statements/<%= sr_purpose_statement.id %>">
+            <%= sr_purpose_statement.purpose_statements_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/sr_purpose_statements/<%= sr_purpose_statement.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/sr_purpose_statements/<%= sr_purpose_statement.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_sr_purpose_statement/<%= sr_purpose_statement.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
