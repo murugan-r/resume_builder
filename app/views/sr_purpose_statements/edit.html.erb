@@ -24,7 +24,7 @@
           Purpose statements
         </label>
 
-        <input type="text" id="purpose_statements_id" name="purpose_statements_id" placeholder="Purpose statements" class="form-control" value="<%= @sr_purpose_statement.purpose_statements_id %>">
+        <%= select_tag(:purpose_statements_id, options_from_collection_for_select(PurposeStatement.all, :id, :user_id, @sr_purpose_statement.purpose_statements_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for resume_id -->
