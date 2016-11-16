@@ -16,7 +16,7 @@
 
       <% @saved_resumes.each do |saved_resume| %>
       <tr>
-        <td><%= saved_resume.user_id %></td>
+        <td><%= saved_resume.user.email %></td>
         <td><%= saved_resume.resume_name %></td>
         <td>
           <a href="/saved_resumes/<%= saved_resume.id %>" class="btn btn-primary">Show</a>
