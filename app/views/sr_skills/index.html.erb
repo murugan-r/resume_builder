@@ -16,8 +16,20 @@
 
       <% @sr_skills.each do |sr_skill| %>
       <tr>
-        <td><%= sr_skill.resume.user_id %></td>
-        <td><%= sr_skill.skills.user_id %></td>
+        <td>
+          <% if sr_skill.resume.present? %>
+            <a href="/saved_resumes/<%= sr_skill.resume.id %>">
+              <%= sr_skill.resume.user_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if sr_skill.skills.present? %>
+            <a href="/skills/<%= sr_skill.skills.id %>">
+              <%= sr_skill.skills.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/sr_skills/<%= sr_skill.id %>" class="btn btn-primary">Show</a>
           <a href="/sr_skills/<%= sr_skill.id %>/edit" class="btn btn-warning">Edit</a>

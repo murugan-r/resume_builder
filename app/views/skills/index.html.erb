@@ -15,7 +15,13 @@
 
       <% @skills.each do |skill| %>
       <tr>
-        <td><%= skill.user.email %></td>
+        <td>
+          <% if skill.user.present? %>
+            <a href="/users/<%= skill.user.id %>">
+              <%= skill.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/skills/<%= skill.id %>" class="btn btn-primary">Show</a>
           <a href="/skills/<%= skill.id %>/edit" class="btn btn-warning">Edit</a>

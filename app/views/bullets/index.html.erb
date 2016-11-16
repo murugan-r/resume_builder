@@ -15,7 +15,13 @@
 
       <% @bullets.each do |bullet| %>
       <tr>
-        <td><%= bullet.organization.user_id %></td>
+        <td>
+          <% if bullet.organization.present? %>
+            <a href="/organizations/<%= bullet.organization.id %>">
+              <%= bullet.organization.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/bullets/<%= bullet.id %>" class="btn btn-primary">Show</a>
           <a href="/bullets/<%= bullet.id %>/edit" class="btn btn-warning">Edit</a>

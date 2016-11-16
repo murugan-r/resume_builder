@@ -19,7 +19,13 @@
 
       <% @organizations.each do |organization| %>
       <tr>
-        <td><%= organization.user.email %></td>
+        <td>
+          <% if organization.user.present? %>
+            <a href="/users/<%= organization.user.id %>">
+              <%= organization.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= organization.organization %></td>
         <td><%= organization.start_month %></td>
         <td><%= organization.end_month %></td>

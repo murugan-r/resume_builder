@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Resume</dt>
-      <dd><%= @sr_skill.resume_id %></dd>
+      <dd>
+        <% if @sr_skill.resume.present? %>
+          <a href="/saved_resumes/<%= @sr_skill.resume_id %>">
+            <%= @sr_skill.resume.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Skills</dt>
-      <dd><%= @sr_skill.skills_id %></dd>
+      <dd>
+        <% if @sr_skill.skills.present? %>
+          <a href="/skills/<%= @sr_skill.skills_id %>">
+            <%= @sr_skill.skills.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

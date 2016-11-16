@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Organization</dt>
-      <dd><%= @bullet.organization_id %></dd>
+      <dd>
+        <% if @bullet.organization.present? %>
+          <a href="/organizations/<%= @bullet.organization_id %>">
+            <%= @bullet.organization.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

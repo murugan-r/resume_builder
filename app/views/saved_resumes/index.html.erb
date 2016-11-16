@@ -16,7 +16,13 @@
 
       <% @saved_resumes.each do |saved_resume| %>
       <tr>
-        <td><%= saved_resume.user.email %></td>
+        <td>
+          <% if saved_resume.user.present? %>
+            <a href="/users/<%= saved_resume.user.id %>">
+              <%= saved_resume.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= saved_resume.resume_name %></td>
         <td>
           <a href="/saved_resumes/<%= saved_resume.id %>" class="btn btn-primary">Show</a>

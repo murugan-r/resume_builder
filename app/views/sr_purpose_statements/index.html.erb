@@ -16,8 +16,20 @@
 
       <% @sr_purpose_statements.each do |sr_purpose_statement| %>
       <tr>
-        <td><%= sr_purpose_statement.purpose_statements.user_id %></td>
-        <td><%= sr_purpose_statement.resume.user_id %></td>
+        <td>
+          <% if sr_purpose_statement.purpose_statements.present? %>
+            <a href="/purpose_statements/<%= sr_purpose_statement.purpose_statements.id %>">
+              <%= sr_purpose_statement.purpose_statements.user_id %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if sr_purpose_statement.resume.present? %>
+            <a href="/saved_resumes/<%= sr_purpose_statement.resume.id %>">
+              <%= sr_purpose_statement.resume.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/sr_purpose_statements/<%= sr_purpose_statement.id %>" class="btn btn-primary">Show</a>
           <a href="/sr_purpose_statements/<%= sr_purpose_statement.id %>/edit" class="btn btn-warning">Edit</a>
