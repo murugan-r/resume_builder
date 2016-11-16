@@ -14,12 +14,14 @@
       <a href="/purpose_statements" class="btn btn-primary">
         Back
       </a>
-      <a href="/purpose_statements/<%= @purpose_statement.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_purpose_statement/<%= @purpose_statement.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @purpose_statement.user %>
+        <a href="/purpose_statements/<%= @purpose_statement.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_purpose_statement/<%= @purpose_statement.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
