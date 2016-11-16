@@ -15,7 +15,7 @@
 
       <% @purpose_statements.each do |purpose_statement| %>
       <tr>
-        <td><%= purpose_statement.user_id %></td>
+        <td><%= purpose_statement.user.email %></td>
         <td>
           <a href="/purpose_statements/<%= purpose_statement.id %>" class="btn btn-primary">Show</a>
           <a href="/purpose_statements/<%= purpose_statement.id %>/edit" class="btn btn-warning">Edit</a>
