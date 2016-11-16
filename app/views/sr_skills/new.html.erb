@@ -33,7 +33,7 @@
           Skills
         </label>
 
-        <input type="text" id="skills_id" name="skills_id" placeholder="Skills" class="form-control" value="<%= @sr_skill.skills_id %>">
+        <%= select_tag(:skills_id, options_from_collection_for_select(Skill.all, :id, :user_id, @sr_skill.skills_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
