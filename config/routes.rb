@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Purpose_statement resource:
+  # CREATE
+  get "/purpose_statements/new", :controller => "purpose_statements", :action => "new"
+  post "/create_purpose_statement", :controller => "purpose_statements", :action => "create"
+
+  # READ
+  get "/purpose_statements", :controller => "purpose_statements", :action => "index"
+  get "/purpose_statements/:id", :controller => "purpose_statements", :action => "show"
+
+  # UPDATE
+  get "/purpose_statements/:id/edit", :controller => "purpose_statements", :action => "edit"
+  post "/update_purpose_statement/:id", :controller => "purpose_statements", :action => "update"
+
+  # DELETE
+  get "/delete_purpose_statement/:id", :controller => "purpose_statements", :action => "destroy"
+  #------------------------------
+
   # Routes for the Bullet_tag resource:
   # CREATE
   get "/bullet_tags/new", :controller => "bullet_tags", :action => "new"
